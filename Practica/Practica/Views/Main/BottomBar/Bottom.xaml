@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xf:BottomBarPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+             xmlns:local="clr-namespace:Practica.Views.Main.BottomBar"
+             x:Class="Practica.Views.Main.Bottombar.Bottom">
+
+    <local:ApiPage
+        Icon="ic_favorites.png" 
+        Title="Criptomonedas"/>
+
+    <local:ContactosPage
+        Icon="ic_friends.png"
+        Title="Usuarios"/>
+
+    <local:BottomPage1
+        Icon="ic_nearby.png"
+        Title="Exchange "/>
+
+    <local:BottomPage2
+        Icon="ic_recents.png"
+        Title="Signature"/>
+
+    <local:BottomPage3
+        Icon="ic_restaurants.png"
+        Title="Codigo"/>
+
+    <!--:BottomBarPageExtensions.BadgeColor="DeepPink" 
+        xf:BottomBarPageExtensions.BadgeCount="6"
+        xf:BottomBarPageExtensions.TabColor="#5D4037"
+    
+    xf:BottomBarPageExtensions.TabColor="#7B1FA2" 
+    
+    xf:BottomBarPageExtensions.BadgeColor="Black" 
+        xf:BottomBarPageExtensions.BadgeCount="2"
+        xf:BottomBarPageExtensions.TabColor="#FF5252"
+    
+    xf:BottomBarPageExtensions.TabColor="#FF9800" -->
+    
+</xf:BottomBarPage>

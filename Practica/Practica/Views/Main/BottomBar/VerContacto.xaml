@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica.Views.Main.BottomBar.VerContacto">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout
+        Padding="20"
+        Spacing="10">
+        
+        <Label 
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Ver Contacto"
+            TextColor="{StaticResource primary}"/>
+        
+        <Label
+            FontAttributes="Italic"
+            Text="{Binding Nombre}"
+            TextColor="BlueViolet"/>
+
+        <Label
+            FontAttributes="Italic"
+            Text="{Binding Apellido}"
+            TextColor="BlueViolet"/>
+
+        <Label
+            FontAttributes="Italic"
+            Text="{Binding Cedula}"
+            TextColor="BlueViolet"/>
+
+        <Label
+            FontAttributes="Italic"
+            Text="{Binding Correo}"
+            TextColor="BlueViolet"/>
+
+        <Label
+            FontAttributes="Italic"
+            Text="{Binding Clave}"
+            TextColor="BlueViolet"/>
+        
+    </StackLayout>
+</ContentPage>

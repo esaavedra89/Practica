@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customs="clr-namespace:Practica.Customs"
+             x:Class="Practica.Views.LoginPage"
+             BackgroundColor="#2f4259">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout
+            Padding="10">
+            
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Margin="0,10,0,10"
+                Text="Login"
+                TextColor="White"/>
+
+            <customs:ImageEntry
+                Image="user"
+                Placeholder="Correo"
+                PlaceholderColor="{StaticResource primary}"
+                TextColor="White"
+                x:Name="Usuario"/>
+
+            <customs:ImageEntry
+                Image="password"
+                IsPassword="True"
+                Placeholder="Clave"
+                PlaceholderColor="{StaticResource primary}"
+                TextColor="White"
+                x:Name="Clave"/>
+
+            <Button 
+                BackgroundColor="{StaticResource primary}"
+                Clicked="Enviar_Clicked"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,10,0,0"
+                Text="Enviar"
+                TextColor="White"/>
+
+            <Label
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0"
+                TextColor="{StaticResource primary}"
+                Text="Olvie mi contraseña">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="GoToOlvidePassword_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label
+                HorizontalOptions="Center"
+                Margin="0,0,0,20"
+                Text="Registrarme"
+                TextColor="{StaticResource primary}"
+                VerticalOptions="EndAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="GoToRegsitro_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label
+                HorizontalOptions="Center"
+                Margin="0,0,0,20"
+                Text="Ir directo al Main"
+                TextColor="{StaticResource primary}"
+                VerticalOptions="EndAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="GoToMain_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+        </StackLayout>
+    </ScrollView>
+   
+</ContentPage>

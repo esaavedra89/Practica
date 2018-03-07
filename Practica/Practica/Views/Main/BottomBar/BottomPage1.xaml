@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Practica.ViewModels"
+             x:Class="Practica.Views.Main.BottomBar.BottomPage1">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <viewModel:ExchangeViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout
+        Padding="10"
+        Spacing="10">
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Cambio de Monedas"
+            TextColor="Black"/>
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label
+                    FontAttributes="Bold"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Monto"
+                    TextColor="Black"/>
+
+                <Entry
+                    BackgroundColor="White"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    Placeholder="Ingrese Monto"
+                    PlaceholderColor="Black"
+                    Text="{Binding Amount, Mode=TwoWay}"/>
+
+                <Label
+                    FontAttributes="Bold"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Tasa de Origen"
+                    TextColor="Black"/>
+
+                <Picker
+                    BackgroundColor="White"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding Rates}"
+                    SelectedItem="{Binding SourceRate, Mode=TwoWay }"
+                    TextColor="Black"
+                    Title="Seleccione"/>
+
+                <Label
+                    FontAttributes="Bold"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Text="Tasa de Destino"
+                    TextColor="Black"/>
+
+                <Picker
+                    BackgroundColor="White"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding Rates}"
+                    SelectedItem="{Binding TargetRate, Mode=TwoWay}"
+                    TextColor="Black"
+                    Title="Seleccione"/>
+
+                <Image
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    HeightRequest="40"
+                    Source="a.png"
+                    WidthRequest="40">
+                
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding SwitchCommand}"/>
+                        </Image.GestureRecognizers>
+                
+                </Image>
+
+            </Grid>
+
+            <ActivityIndicator 
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"/>
+
+            <Button
+                BackgroundColor="{StaticResource primary}"
+                BorderRadius="25"
+                Command="{Binding ConvertCommand}"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                Text="Convertir"
+                TextColor="White"/>
+            
+            <Label
+                BackgroundColor="Silver"
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Margin="0,10"
+                Text="{Binding Result, Mode=TwoWay}"
+                TextColor="Black"
+                VerticalOptions="FillAndExpand"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

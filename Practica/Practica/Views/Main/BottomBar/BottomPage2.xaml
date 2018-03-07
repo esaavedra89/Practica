@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="Practica.Views.Main.BottomBar.BottomPage2"
+             BackgroundColor="#2f4259">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout
+            Padding="20"
+            Spacing="10">
+
+            <forms:SignaturePadView
+                BackgroundColor="White"
+                HeightRequest="360"
+                StrokeColor="Black"
+                StrokeWidth="3"
+                WidthRequest="280"
+                x:Name="PadView"/>
+
+            <Button
+                Clicked="SaveButton_Clicked"
+                Text="Save"/>
+
+            <Button
+                Clicked="ClearButton_Clicked_1"
+                Text="Clear"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

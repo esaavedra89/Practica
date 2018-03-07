@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica.Views.Main.MasterPage"
+             Title="Master Page"
+             BackgroundColor="#2f4259">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout
+        VerticalOptions="Center">
+
+        <Button
+            BackgroundColor="{StaticResource primary}"
+            Clicked="BottomBar_Clicked"
+            FontAttributes="Bold"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            Margin="0,10,0,0"
+            Text="Ir a Bottom Bar"
+            TextColor="White"/>
+
+        <Button
+            BackgroundColor="BlueViolet"
+            Clicked="Cripto_Clicked"
+            FontAttributes="Bold"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            Margin="0,10,0,0"
+            Text="Exchange Criptomonedas"
+            TextColor="White"/>
+
+        <Button
+            BackgroundColor="DarkOrange"
+            Clicked="Carousel_Clicked"
+            FontAttributes="Bold"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            Margin="0,10,0,0"
+            Text="Carousel"
+            TextColor="White"/>
+
+        <Button
+            BackgroundColor="Red"
+            Clicked="Salir_Clicked"
+            FontAttributes="Bold"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            Margin="0,10,0,0"
+            Text="Salir"
+            TextColor="White"/>
+
+    </StackLayout>
+    
+</ContentPage>

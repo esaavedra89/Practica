@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica.Views.Main.BottomBar.ContactosPage"
+             xmlns:viewModels="clr-namespace:Practica.ViewModels"
+             Title="Usuarios Almacenados"
+             BackgroundColor="#2f4259">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <viewModels:ContactoViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout
+            Padding="20"
+            Spacing="10">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Margin="0,0,0,15"
+                Text="Usuarios Registrados"
+                TextColor="{StaticResource primary}"/>
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label 
+                    FontAttributes="Bold"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="0,0,0,5"
+                    Text="Nombre"
+                    TextColor="White"/>
+
+                <Label 
+                    FontAttributes="Bold"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,5"
+                    Text="Correo"
+                    TextColor="White"/>
+
+                <Label 
+                    FontAttributes="Bold"
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    HorizontalOptions="End"
+                    Margin="0,0,0,5"
+                    Text="Cedula"
+                    TextColor="White"/>
+
+            </Grid>
+            <ListView
+                ItemsSource="{Binding ListadoPersonas}"
+                x:Name="LvUsuarios">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".5*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width=".5*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                <Label
+                                    FontSize="Micro"    
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Text="{Binding Nombre}"
+                                    TextColor="White"/>
+                                
+                                <Label
+                                    FontSize="Micro"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Correo}"
+                                    TextColor="White"/>
+                                
+                                <Label
+                                    FontSize="Micro"
+                                    Grid.Column="2"
+                                    Grid.Row="0"
+                                    HorizontalOptions="End"
+                                    Text="{Binding Cedula}"
+                                    TextColor="White"/>
+                                    
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

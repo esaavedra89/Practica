@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica.Views.Main.BottomBar.EditarUsuario">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout
+        Padding="20"
+        Spacing="10">
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Editar Usuario"
+            TextColor="{StaticResource primary}"/>
+
+        <Entry
+            Text="{Binding Nombre}"
+            TextColor="BlueViolet"/>
+
+        <Entry
+            Text="{Binding Apellido}"
+            TextColor="BlueViolet"/>
+
+        <Entry
+            Text="{Binding Cedula}"
+            TextColor="BlueViolet"/>
+
+        <Entry
+            Text="{Binding Correo}"
+            TextColor="BlueViolet"/>
+
+        <Entry
+            Text="{Binding Clave}"
+            TextColor="BlueViolet"/>
+
+        <Button
+            BackgroundColor="{StaticResource primary}"
+            Clicked="EditarButton_Clicked"
+            FontAttributes="Bold"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            Margin="0,10,0,0"
+            Text="Editar"
+            TextColor="White"/>
+        
+    </StackLayout>
+</ContentPage>
